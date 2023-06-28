@@ -1,1 +1,23 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Poppins&family=Sofia+Sans:wght@300&display=swap');
+
+/* 
+font-family: 'Montserrat', sans-serif;
+font-family: 'Poppins', sans-serif;
+font-family: 'Sofia Sans', sans-serif; 
+*/
+:root{
+
+    --voilet :#624DE3;
+    --table-primary:#F7F6FE;
+    --table-secondary:#fff;
+    --gray:#D9D9D9;
+    --red:#FF0000;
+    --green:#1F9254;
+    --delete:#A30D11;
+    --next:#9E9E9E;
+    --white:#FFFFFF;
+}
+body{
+    margin: 0;
+    padding: 0;
+}

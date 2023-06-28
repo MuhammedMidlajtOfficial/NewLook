@@ -1,0 +1,110 @@
+.container{
+    display: flex;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background-image: url(src/assets/Images/Admin.png);
+    background-size:cover;
+
+    justify-content: center;
+    align-items: center;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-around; */
+    align-items: center;
+
+}
+.choose-text{
+    font-size: 35px;
+    margin: 10% 0 0 0;
+}
+.selection{
+    display: flex;
+    margin-top: 10%;
+    gap: 100px;
+}
+
+.shop-icon{
+    height: 250px;
+    width: 250px;
+    background-color: #2a1b3d;
+    border-radius: 10px;
+    border: none;
+}
+
+.shop-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    font-family: 'Sofia Sans', sans-serif; 
+}
+
+
+.godown-icon{
+    font-size: 50px;
+    margin: 20% 0 0 0;
+    cursor: pointer;
+}
+
+.godown-icon:hover{
+    color: #2a1b3d;
+}
+
+
+/* trail */
+.btn-one {
+    color: #FFF;
+    transition: all 0.3s;
+    position: relative;
+    cursor: pointer;
+  }
+  .btn-one span {
+    transition: all 0.3s;
+  }
+  .btn-one::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    border-top-color: rgba(255,255,255,0.5);
+    border-bottom-color: rgba(255,255,255,0.5);
+    transform: scale(0.1, 1);
+  }
+  .btn-one:hover span {
+    letter-spacing: 2px;
+  }
+  .btn-one:hover::before {
+    opacity: 1; 
+    transform: scale(1, 1); 
+  }
+  .btn-one::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    /* transition: all 0.3s; */
+    /* background-color: rgba(255,255,255,0.1); */
+  }
+  .btn-one:hover::after {
+    opacity: 0; 
+    transform: scale(0.1, 1);
+  }
+/* trail */
