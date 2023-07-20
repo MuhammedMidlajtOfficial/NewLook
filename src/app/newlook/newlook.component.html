@@ -20,10 +20,10 @@
                             <i class="fa-solid fa-chevron-down"></i>
                     </button>
                     </div>
-                    <div class="Add-div">
+                    <div (click)="toggleAddProduct()" class="Add-div">
                         <button class="add-product">
                             <i class="fa-solid fa-plus"></i>
-                            Add Product
+                            {{isAddProduct ? 'Close' : 'Add Product'}}
                         </button>
                     </div>
 
@@ -38,71 +38,47 @@
                         <td>Selling Price</td>
                         <td>Stock Balance</td>
                         <td>Monthly Sales</td>
-                        <td>Action</td>
+                        <td>changedBy</td>
+                        <td *ngIf="isAdmin"> Action</td>
                     </thead>
 <br>
 
-                    <tr class="table-contents-primary">
-                        <td>Jeans</td>
-                        <td>1000</td>
-                        <td>4,50,000</td>
-                        <td>10</td>
-                        <td>990</td>
+                    <tr *ngIf="isAddProduct" class="table-contents-primary">
+                        <td><input type="text" placeholder="product" name="product" [(ngModel)]="product"></td>
+                        <td><input type="number" placeholder="shop intake" name="intake" [(ngModel)]="intake"></td>
+                        <td><input type="number" placeholder="selling price" name="sellingPrice" [(ngModel)]="sellingPrice"></td>
+                        <td><input type="number" placeholder="stock balance" name="stockBalance"  [(ngModel)]="stockBalance"></td>
+                        <td><input type="number" placeholder="Monthly sales" name="monthlySales"  [(ngModel)]="monthlySales"></td>
                         <td class="action">
-                            <i class="fa-regular fa-pen-to-square edit" style="color: var(--voilet);"></i>
-                            <i class="fa-solid fa-trash delete" style="color: var(--delete);"></i>
+                            <i class="fa-regular fa-plus" (click)="addProduct()" style="color: var(--voilet);"></i>
+                            
+                        </td>
+                    </tr>
+                    <tr *ngIf="isProductEdit" class="table-contents-primary">
+                        <td><input type="text" placeholder="product" name="editProduct" [(ngModel)]="editProductName"></td>
+                        <td><input type="number" placeholder="shop intake" name="editIntake" [(ngModel)]="editIntake"></td>
+                        <td><input type="number" placeholder="selling price" name="editSellingPrice" [(ngModel)]="editSellingPrice"></td>
+                        <td><input type="number" placeholder="stock balance" name="editStockBalance"  [(ngModel)]="editStockBalance"></td>
+                        <td><input type="number" placeholder="Monthly sales" name="editMonthlySales"  [(ngModel)]="editMonthlySales"></td>
+                        <td class="action">
+                            <i class="fa-regular fa-plus" (click)="editProduct()" style="color: var(--voilet);"></i>
+                            
+                        </td>
+                    </tr>
+                    <tr *ngFor="let product of products" class="table-contents-primary">
+                        <td>{{product.name}}</td>
+                        <td>{{product.shopIntake}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.stockBalance}}</td>
+                        <td>{{product.monthlySales}}</td>
+                        <td>{{product.personName}}</td>
+                        <td class="action">
+                            <i *ngIf="isAdmin" (click)="setEditProduct(product)" class="fa-regular fa-pen-to-square edit" style="color: var(--voilet);"></i>
+                            <i *ngIf="isAdmin" (click)="deleteProduct(product._id)" class="fa-solid fa-trash delete" style="color: var(--delete);"></i>
                         </td>
                     </tr>
 
-                    <tr class="table-contents-secondary">
-                        <td>Jeans</td>
-                        <td>1000</td>
-                        <td>4,50,000</td>
-                        <td>10</td>
-                        <td>990</td>
-                        <td class="action">
-                            <i class="fa-regular fa-pen-to-square edit" style="color: var(--voilet);"></i>
-                            <i class="fa-solid fa-trash delete" style="color: var(--delete);"></i>
-                        </td>
-                    </tr>
-
-                    <tr class="table-contents-primary">
-                        <td>Jeans</td>
-                        <td>1000</td>
-                        <td>4,50,000</td>
-                        <td>10</td>
-                        <td>990</td>
-                        <td class="action">
-                            <i class="fa-regular fa-pen-to-square edit" style="color: var(--voilet);"></i>
-                            <i class="fa-solid fa-trash delete" style="color: var(--delete);"></i>
-                        </td>
-                    </tr>
-
-                    <tr class="table-contents-secondary">
-                        <td>Jeans</td>
-                        <td>1000</td>
-                        <td>4,50,000</td>
-                        <td>10</td>
-                        <td>990</td>
-                        <td class="action">
-                            <i class="fa-regular fa-pen-to-square edit" style="color: var(--voilet);"></i>
-                            <i class="fa-solid fa-trash delete" style="color: var(--delete);"></i>
-                        </td>
-                    </tr>
-
-                    <tr class="table-contents-primary">
-                        <td>Jeans</td>
-                        <td>1000</td>
-                        <td>4,50,000</td>
-                        <td>10</td>
-                        <td>990</td>
-                        <td class="action">
-                            <i class="fa-regular fa-pen-to-square edit" style="color: var(--voilet);"></i>
-                            <i class="fa-solid fa-trash delete" style="color: var(--delete);"></i>
-                        </td>
-                    </tr>
-
-                    <tr class="table-contents-secondary">
+                    <!-- <tr class="table-contents-secondary">
                         <td>Jeans</td>
                         <td>1000</td>
                         <td>4,50,000</td>
@@ -161,6 +137,54 @@
                             <i class="fa-solid fa-trash delete" style="color: var(--delete);"></i>
                         </td>
                     </tr>
+
+                    <tr class="table-contents-primary">
+                        <td>Jeans</td>
+                        <td>1000</td>
+                        <td>4,50,000</td>
+                        <td>10</td>
+                        <td>990</td>
+                        <td class="action">
+                            <i class="fa-regular fa-pen-to-square edit" style="color: var(--voilet);"></i>
+                            <i class="fa-solid fa-trash delete" style="color: var(--delete);"></i>
+                        </td>
+                    </tr>
+
+                    <tr class="table-contents-secondary">
+                        <td>Jeans</td>
+                        <td>1000</td>
+                        <td>4,50,000</td>
+                        <td>10</td>
+                        <td>990</td>
+                        <td class="action">
+                            <i class="fa-regular fa-pen-to-square edit" style="color: var(--voilet);"></i>
+                            <i class="fa-solid fa-trash delete" style="color: var(--delete);"></i>
+                        </td>
+                    </tr>
+
+                    <tr class="table-contents-primary">
+                        <td>Jeans</td>
+                        <td>1000</td>
+                        <td>4,50,000</td>
+                        <td>10</td>
+                        <td>990</td>
+                        <td class="action">
+                            <i class="fa-regular fa-pen-to-square edit" style="color: var(--voilet);"></i>
+                            <i class="fa-solid fa-trash delete" style="color: var(--delete);"></i>
+                        </td>
+                    </tr>
+
+                    <tr class="table-contents-secondary">
+                        <td>Jeans</td>
+                        <td>1000</td>
+                        <td>4,50,000</td>
+                        <td>10</td>
+                        <td>990</td>
+                        <td class="action">
+                            <i class="fa-regular fa-pen-to-square edit" style="color: var(--voilet);"></i>
+                            <i class="fa-solid fa-trash delete" style="color: var(--delete);"></i>
+                        </td>
+                    </tr> -->
                 </table>
             </div>
 

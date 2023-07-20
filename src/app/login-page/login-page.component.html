@@ -1,4 +1,6 @@
 <div class="container">
+
+    <button routerLink="/change-password">Change Password</button>
     <div class="row">
         <div class="main col col-xxl-12 col-xl-6 col-lg-4 col-md-2 col-sm-1">
 
@@ -12,21 +14,21 @@
                         <div class="login-details">
                             <div class="user user-id">
                                 <label for="" class="user-text">Faculty ID</label><br>
-                                <input class="user-input" type="text">
+                                <input class="user-input" type="text" [(ngModel)]="username">
                             </div>
     
                             <div class="user password">
                                 <label for="" class="user-text">Password</label><br>
-                                <input class="user-input-password" type="password">
-                                <span class="show">
+                                <input class="user-input-password" type="password" id="password" [(ngModel)]="password">
+                                <span (click)="toggleVisiblity()" class="show">
                                     <!-- <img class="eye" src="../../../src/assets/Images/Vector.png" alt=""> -->
-                                    <i class="fa fa-eye" aria-hidden="true"></i>
+                                    <i  class="fa fa-eye" aria-hidden="true"></i>
                                     Show
                                 </span>
                             </div>
     
                             <div class="login">
-                                <button routerLink="admin-selection">Login</button>
+                                <button (click)="login()">Login</button>
                             </div>
                             <div class="forgot-password">
                                 <p>Forgot Password?</p>

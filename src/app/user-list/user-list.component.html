@@ -1,0 +1,16 @@
+<div>
+    <button>Add user</button>
+    <div>
+        <input type="text" name="username" placeholder="username" [(ngModel)]="username">
+        <input type="text" name="password" placeholder="password"  [(ngModel)]="password">
+        <button (click)="addUser()">Submit</button>
+    </div>
+    <ul>
+        <li *ngFor="let user of users">
+            {{user.username}}
+            <button (click)="deleteUser(user.id)">
+                delete
+            </button>
+        </li>
+    </ul>
+</div>
