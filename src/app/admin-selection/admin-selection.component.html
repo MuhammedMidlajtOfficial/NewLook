@@ -1,17 +1,22 @@
 <div class="container">
+  <button (click)="logout()">logout</button>
+  <button *ngIf="isAdmin" routerLink="/user-list">Manage User</button>
     <div class="row">
         <div class="main col col-xxl-12 col-xl-6 col-lg-4 col-md-2 col-sm-1">
             <div class="choose-text">
                 <p>Choose Your Store</p>
             </div>
             <div class="selection">
-                <div class="Al-Shour shop-icon">
+              <a href="/store/al-shour">
+                <div  class="Al-Shour shop-icon">
                     <div class="box-1">
-                        <div class="btn btn-one">
+                        <div  class="btn btn-one">
                           <span>AL SHOUR</span>
                         </div>
                       </div>
                 </div>
+              </a>
+              <a href="/store/new-look">
                 <div class="New-look shop-icon">
                     <div class="box-1">
                         <div class="btn btn-one">
@@ -19,6 +24,8 @@
                         </div>
                       </div>
                 </div>
+              </a>
+              <a href="/store/asker">
                 <div class="Asker shop-icon">
                     <div class="box-1">
                         <div class="btn btn-one">
@@ -26,9 +33,10 @@
                         </div>
                       </div>
                 </div>
+              </a>
 
             </div>
-            <div class="godown-icon">
+            <div *ngIf="isAdmin" routerLink="/godown" class="godown-icon">
                 <i class="fa fa-home" aria-hidden="true"></i>
             </div>
         </div>
