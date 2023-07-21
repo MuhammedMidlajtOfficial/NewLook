@@ -14,11 +14,13 @@ export class ChangePasswordComponent {
     newPassword:any="";
     username:any="";
 
+
     updatePassword(){
       if(this.oldPassword=="" || this.newPassword=="" || this.username==""){
         alert("Please fill all the fields");
         return;
       }
+
       const user={
         username:this.username,
         // oldPassword:this.oldPassword,
@@ -32,5 +34,9 @@ export class ChangePasswordComponent {
           alert("Invalid old password");
         }
       })
+    }
+    toggleVisiblity(){
+      const password:any=document.getElementById("password");
+      password.type==="password" ? password.type="text" : password.type="password";
     }
 }

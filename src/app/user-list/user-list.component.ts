@@ -37,6 +37,10 @@ export class UserListComponent {
       alert("Username already exists");
       return;
     }
+    if(!isAlready){
+      alert("User Added Successfully");
+      return;
+    }
     const user={
       username:this.username,
       password:this.password,
@@ -51,5 +55,9 @@ export class UserListComponent {
     this.user.deleteUser(username).subscribe((data:any)=>{
       this.getAllUsers();
     })
+  }
+  toggleVisiblity(){
+    const password:any=document.getElementById("password");
+    password.type==="password" ? password.type="text" : password.type="password";
   }
 }

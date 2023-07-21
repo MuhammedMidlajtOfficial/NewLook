@@ -47,6 +47,7 @@ export class NewlookComponent {
       shopIntake: this.intake,
       stockBalance: this.stockBalance,
       monthlySales: this.monthlySales,
+      // monthlySales : this.sellingPrice*(this.intake+this.stockBalance), 
       shopName: this.shopName,
       personName: this.personName,
     };
@@ -62,6 +63,9 @@ export class NewlookComponent {
       this.monthlySales = null;
     });
   }
+  // totalMonthlySales(){
+  //   this.sellingPrice*(this.intake+this.stockBalance)
+  // }
   getProducts() {
     this.api.getshopProducts({shopName:this.shopName}).subscribe((data: any) => {
       console.log(data);

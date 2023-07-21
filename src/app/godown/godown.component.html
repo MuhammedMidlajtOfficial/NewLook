@@ -4,22 +4,22 @@
       <div class="header">
         <div class="shop-name">Godown</div>
 
-        <div class="search">
+        <!-- <div class="search">
           <i class="fa-solid fa-magnifying-glass icon"></i>
           <input class="input-field" type="text" placeholder="Search..." />
-        </div>
+        </div> -->
 
         <div class="add-filter">
-          <div class="filter-div">
+          <!-- <div class="filter-div">
             <button class="filter">
               Filter
               <i class="fa-solid fa-chevron-down"></i>
             </button>
-          </div>
+          </div> -->
           <div class="Add-div">
             <button (click)="toggleAddProduct()" class="add-product">
               <i class="fa-solid fa-plus"></i>
-              Add Product
+              {{isAddProduct ? 'Close' : 'Add Product'}}
             </button>
           </div>
         </div>
@@ -247,7 +247,7 @@
           </tr>
         </table>
       </div>
-      <div class="footer">
+      <!-- <div class="footer">
         <div class=""></div>
         <div class="footer-center">
           <div class="next">Previous</div>
@@ -265,7 +265,7 @@
         <div class="footer-end">
           <div class="per-page">8 Product per page</div>
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </div>

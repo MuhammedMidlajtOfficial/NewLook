@@ -1,6 +1,5 @@
 <div class="container">
-  <button (click)="logout()">logout</button>
-  <button *ngIf="isAdmin" routerLink="/user-list">Manage User</button>
+  
     <div class="row">
         <div class="main col col-xxl-12 col-xl-6 col-lg-4 col-md-2 col-sm-1">
             <div class="choose-text">
@@ -36,8 +35,18 @@
               </a>
 
             </div>
-            <div *ngIf="isAdmin" routerLink="/godown" class="godown-icon">
-                <i class="fa fa-home" aria-hidden="true"></i>
+            <div class="footer">
+              <div class="log-out godown-icon">
+                <i (click)="logout()" class="fa fa-power-off" aria-hidden="true"></i>
+                <!-- <button (click)="logout()">logout</button> -->
+              </div>
+              <div *ngIf="isAdmin" routerLink="/godown" class="godown-icon">
+                  <i class="fa fa-home" aria-hidden="true"></i>
+              </div>
+              <div class="manageUser godown-icon" >
+                <i class="fa fa-user-circle " *ngIf="isAdmin" routerLink="/user-list" aria-hidden="true"></i>
+                <!-- <button *ngIf="isAdmin" routerLink="/user-list">Manage User</button> -->
+              </div>
             </div>
         </div>
     </div>
