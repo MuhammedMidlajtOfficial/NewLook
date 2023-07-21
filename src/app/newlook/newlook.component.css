@@ -6,7 +6,7 @@
     margin: 0;
     width: 100vw;
     height: 100vh;
-    margin: 20px 10px 10px 20px;
+    /* margin: 20px 10px 10px 20px; */
     /* max-width: 1440px; */
     font-family: 'Montserrat', sans-serif;
 
@@ -17,7 +17,20 @@
     align-items: center;
     justify-content: center;
 } */
-
+.BackButtonHea{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+  }
+  .backButton{
+    font-size: 50px;
+    margin: 10px 20px;
+    color: var(--voilet);
+    cursor: pointer;
+  }
+  .backButton:hover{
+    color: #44369f;
+  }
 
 /* header */
 

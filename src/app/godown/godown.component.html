@@ -2,6 +2,9 @@
   <div class="row">
     <div class="main col col-xxl-12 col-xl-6 col-lg-4 col-md-2 col-sm-1">
       <div class="header">
+        <div class="BackButtonHead" routerLink="/admin-selection">
+          <i class="fa-solid fa-caret-left backButton"></i>
+        </div>
         <div class="shop-name">Godown</div>
 
         <!-- <div class="search">
@@ -19,7 +22,7 @@
           <div class="Add-div">
             <button (click)="toggleAddProduct()" class="add-product">
               <i class="fa-solid fa-plus"></i>
-              {{isAddProduct ? 'Close' : 'Add Product'}}
+              Add Product
             </button>
           </div>
         </div>

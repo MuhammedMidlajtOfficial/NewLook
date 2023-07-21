@@ -8,10 +8,33 @@
     text-decoration: none;
     background-image: url(src/assets/Images/Admin.png);
     background-size:cover;
-
+    display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
+    height: 100vh;
+    
 }
+a{
+  text-decoration:none;
+}
+
+
+/* .BackButtonHead{
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+.backButton{
+  font-size: 70px;
+  margin: 10px 20px;
+  color: var(--voilet);
+  cursor: pointer;
+}
+.backButton:hover{
+  color: #44369f;
+} */
+
 .main{
     display: flex;
     flex-direction: column;
@@ -32,8 +55,10 @@
 .shop-icon{
     height: 250px;
     width: 250px;
-    background-color: #3c2d5d;
-    border-radius: 10px;
+    /* background-color: #3c2d5d; */
+    background-image:linear-gradient(#a1c4e7,#624DE3);
+    box-shadow: rgb(133, 133, 133) 4px 4px 10px;
+    border-radius: 15px;
     border: none;
 }
 
@@ -52,16 +77,20 @@
   align-items: center;
   justify-content: center;
   height: 100px;
-  gap: 25px;
+  gap: 35px;
 }
+
 .godown-icon{
     font-size: 50px;
     margin: 20% 0 0 0;
     cursor: pointer;
+    /* color: #a1c4e7; */
 }
 
 .godown-icon:hover{
-    color: #2a1b3d;
+    color: #624DE3;
+    transform: scale(1.1);
+    transition:ease-in-out 300ms ;
 }
 
 

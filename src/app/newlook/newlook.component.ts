@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../api.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { AdminSelectionComponent } from '../admin-selection/admin-selection.component';
 
 @Component({
   selector: 'app-newlook',
@@ -119,6 +120,12 @@ export class NewlookComponent {
       this.isProductEdit = false;
     })
   }
+
+  // myEdit
+
+  
+
+  // myEdit
 
 
 }

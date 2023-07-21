@@ -1,5 +1,8 @@
 
-
+*{
+    margin: 0;
+    padding: 0;
+}
 .container{
     display: flex;
     /* overflow-x: hidden; */
@@ -7,7 +10,7 @@
     margin: 0;
     width: 100vw;
     height: 100vh;
-    margin: 20px 10px 10px 20px;
+    /* margin: 20px 10px 10px 20px; */
     /* max-width: 1440px; */
     font-family: 'Montserrat', sans-serif;
 
@@ -18,8 +21,23 @@
     align-items: center;
     justify-content: center;
 } */
-
-
+.row{
+    margin: 0;
+}
+.BackButtonHea{
+  display: flex;
+  align-items: start;
+  justify-content: start;
+}
+.backButton{
+  font-size: 50px;
+  margin: 10px 20px;
+  color: var(--voilet);
+  cursor: pointer;
+}
+.backButton:hover{
+  color: #44369f;
+}
 /* header */
 
 .header{
@@ -29,6 +47,7 @@
     justify-content: space-between;
     width: 99vw;
     height: auto;
+    margin-top: 10px;
 }
 
 .shop-name{
@@ -38,7 +57,8 @@
     justify-content: center;
     align-items: center;
     font-size: 25px;
-    margin-left: 30px;
+    /* margin-left: 30px; */
+    color: var(--voilet);
 }
 /* search */
 
@@ -101,13 +121,13 @@
 /* header */
 /* table */
 .table{
-    margin-top: 30px;
+    margin-top: 20px;
     width: 99vw;
     gap: 20px;
     text-align: center;
 }
 .table:first-child{
-    margin-top: 30px;
+    margin-top: 20px;
 }
 .table-header{
     font-size: 20px;

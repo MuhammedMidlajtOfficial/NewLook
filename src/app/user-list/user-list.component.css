@@ -17,6 +17,22 @@
     width: 100vw;
     height: 100vh;
 }
+
+.BackButtonHea{
+    display: flex;
+    align-items: start;
+    justify-content: start;
+  }
+  .backButton{
+    font-size: 50px;
+    margin: 10px 20px;
+    color: var(--voilet);
+    cursor: pointer;
+  }
+  .backButton:hover{
+    color: #44369f;
+  }
+  
 .left{
     margin: 0;
     width: 800px;
