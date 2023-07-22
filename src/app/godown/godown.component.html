@@ -237,16 +237,16 @@
             <td class="total">Balance</td>
             <td>
               <tr class="balance-green balance-number">
-                2500
+                {{purchaseQuantityTotal}}
               </tr>
               <tr class="balance-red balance-number">
-                5
+                {{recievedQuantityTotal}}
               </tr>
             </td>
           </tr>
           <tr>
             <td class="total">Total</td>
-            <td class="balance-green balance-number">2495</td>
+            <td class="balance-green balance-number">{{ purchaseQuantityTotal + recievedQuantityTotal}}</td>
           </tr>
         </table>
       </div>
