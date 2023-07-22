@@ -19,6 +19,7 @@ export class NewlookComponent {
       this.getProducts();
     })
 
+
   }
 
   products: any = [];
@@ -27,9 +28,9 @@ export class NewlookComponent {
   isProductEdit: boolean = false;
 
   product: any = '';
-  intake: any = null;
-  sellingPrice: any = null;
-  stockBalance: any = null;
+  intake: any = 0;
+  sellingPrice: any = 0;
+  stockBalance: any = 0;
   monthlySales: any = null;
   personName: any = localStorage.getItem('username');
 
@@ -42,6 +43,12 @@ export class NewlookComponent {
   shopName: any = null;
 
   addProduct() {
+
+    if(this.product=="" || this.intake==null || this.sellingPrice==null || this.stockBalance==null || this.monthlySales==null){
+      alert("Please fill all the fields");
+      return;
+    }
+
     const product = {
       name: this.product,
       price: this.sellingPrice,
@@ -104,7 +111,13 @@ export class NewlookComponent {
   }
 
   editProduct() {
+    if(this.editProductId==null || this.editProductName==null || this.editIntake==null || this.editSellingPrice==null || this.editStockBalance==null || this.editMonthlySales==null){
+      alert("Please fill all the fields");
+      return;
+    }
     const data={
+
+
       id:this.editProductId,
       product:{
         name: this.editProductName,
@@ -119,6 +132,15 @@ export class NewlookComponent {
       this.getProducts();
       this.isProductEdit = false;
     })
+  }
+
+  setSales(){
+    console.log(this.sellingPrice);
+    this.monthlySales = this.sellingPrice*(this.intake-this.stockBalance);
+  }
+  setEditSales(){
+    
+    this.editMonthlySales = this.editSellingPrice*(this.editIntake-this.editStockBalance);
   }
 
   // myEdit
