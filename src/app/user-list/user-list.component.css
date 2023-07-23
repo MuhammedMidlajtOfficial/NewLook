@@ -6,13 +6,13 @@
     width: 100vw;
     height: 100vh;
 
-    background-image: url(src/assets/Images/user.png);
+    background-image: url(../../../src/assets/Images/Admin.png);
     background-size:cover;
 }
 
 .main{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center;
     width: 100vw;
     height: 100vh;
@@ -34,15 +34,20 @@
   }
   
 .left{
+    position: relative;
     margin: 0;
-    width: 800px;
+    /* width: 800px; */
     height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     /* opacity: 0.7; */
 }
-
+.BackButtonHead{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
 .log-in-box{
 
     height: 350px;
@@ -58,6 +63,30 @@
 
     border: 1px solid #fff;
     border-radius: 10px;
+    
+    
+    
+    /* opacity: 0.5; */
+}
+
+.userlist-in-box{
+
+    min-height: 350px;
+    width: 450px;
+    /* background-color: #7ea1da; */
+    background: transparent;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    margin-top: 25px;
+
+    border: 1px solid #fff;
+    border-radius: 10px;
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
     
     
     /* opacity: 0.5; */
@@ -138,4 +167,45 @@
 .forgot-password{
     font-size: 10px;
     cursor: pointer;
+}
+
+
+.user-list-column{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.user-column{
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;   
+    height: 60px;
+    width: 350px;
+    border-radius: 20px;
+    background-color: #CDC9F1;
+    filter: drop-shadow(1px 1px 7px #e5e5e5);
+    margin: 10px;
+    padding-left: 20px;
+}
+
+.user-list-user-name{
+    /* margin-top: 20px; */
+    font-family: 'Sofia Sans', sans-serif; 
+    font-size: 20px;
+    font-weight: bold;
+
+}
+.user-list-delete{
+    height: 45px;
+    width: 60px;
+    background-color: red;
+    border-radius: 10px;
+    display: flex;align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+.user-list-delete i{
+    font-size: 20px;
 }

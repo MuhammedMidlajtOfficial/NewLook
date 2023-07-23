@@ -1,13 +1,15 @@
 <div class="container">
-    <div class="BackButtonHead" routerLink="/admin-selection">
-        <i class="fa-solid fa-caret-left backButton"></i>
-      </div>
+    
     <!-- <button routerLink="/change-password" >Change Password</button> -->
     <div class="row">
         
         <div class="main col col-xxl-12 col-xl-6 col-lg-4 col-md-2 col-sm-1">
-
+            <div class="BackButtonHead" routerLink="/admin-selection">
+                <i class="fa-solid fa-caret-left backButton"></i>
+              </div>
             <div class="left">
+                
+
                 <div class="log-in-box">
                     <div id="log-in-column">
                         <div class="hi">
@@ -35,25 +37,34 @@
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
         <div class="right">
-            
+            <div class="userlist-in-box">
+                <div class="user-list-column">
+                    <div class="user-column" *ngFor="let user of users" >
+                            <span class="user-list-user-name">{{user.username}}</span>
+                            <span class="user-list-delete" (click)="deleteUser(user.id)" >
+                                <i class="fa-solid fa-trash" style="color: #fff;"></i>
+                            </span>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </div>
 </div>
 </div>
         
-    
-    <ul>
+
+
+    <!-- <ul>
         <li *ngFor="let user of users">
             {{user.username}}
             <button (click)="deleteUser(user.id)">
                 delete
             </button>
         </li>
-    </ul>
+    </ul> -->
 
     

@@ -54,6 +54,7 @@ export class UserListComponent {
     console.log(username);
     this.user.deleteUser(username).subscribe((data:any)=>{
       this.getAllUsers();
+      
     })
   }
   toggleVisiblity(){
