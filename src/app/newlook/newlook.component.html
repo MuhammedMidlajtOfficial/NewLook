@@ -6,7 +6,7 @@
                     <i class="fa-solid fa-caret-left backButton"></i>
                   </div>
                 <div routerLink="/admin-selection" class="shop-name">
-                    Al Shour
+                    {{ shopName | titlecase}}
                 </div>
                 
                 <!-- <div class="search">
@@ -48,10 +48,10 @@
 
                     <tr *ngIf="isAddProduct" class="table-contents-primary">
                         <td><input type="text" placeholder="product" name="product" [(ngModel)]="product"></td>
-                        <td><input type="number" placeholder="shop intake" name="intake" [(ngModel)]="intake"></td>
-                        <td><input type="number" placeholder="selling price" name="sellingPrice" [(ngModel)]="sellingPrice"></td>
-                        <td><input type="number" placeholder="stock balance" name="stockBalance"  [(ngModel)]="stockBalance"></td>
-                        <td><input type="number" placeholder="Monthly sales" name="monthlySales"  [(ngModel)]="monthlySales"></td>
+                        <td><input type="number" placeholder="shop intake" name="intake" (input)="setSales()" [(ngModel)]="intake"></td>
+                        <td><input type="number" placeholder="selling price" name="sellingPrice" (input)="setSales()" [(ngModel)]="sellingPrice"></td>
+                        <td><input type="number" placeholder="stock balance" name="stockBalance" (input)="setSales()"  [(ngModel)]="stockBalance"></td>
+                        <td><input type="number" placeholder="Monthly sales" name="monthlySales"  [(ngModel)]="monthlySales" disabled></td>
                         <td class="action">
                             <i class="fa-regular fa-plus" (click)="addProduct()" style="color: var(--voilet);"></i>
                             
@@ -59,10 +59,10 @@
                     </tr>
                     <tr *ngIf="isProductEdit" class="table-contents-primary">
                         <td><input type="text" placeholder="product" name="editProduct" [(ngModel)]="editProductName"></td>
-                        <td><input type="number" placeholder="shop intake" name="editIntake" [(ngModel)]="editIntake"></td>
-                        <td><input type="number" placeholder="selling price" name="editSellingPrice" [(ngModel)]="editSellingPrice"></td>
-                        <td><input type="number" placeholder="stock balance" name="editStockBalance"  [(ngModel)]="editStockBalance"></td>
-                        <td><input type="number" placeholder="Monthly sales" name="editMonthlySales"  [(ngModel)]="editMonthlySales"></td>
+                        <td><input type="number" placeholder="shop intake" name="editIntake" (input)="setEditSales()" [(ngModel)]="editIntake"></td>
+                        <td><input type="number" placeholder="selling price" name="editSellingPrice"  (input)="setEditSales()" [(ngModel)]="editSellingPrice"></td>
+                        <td><input type="number" placeholder="stock balance" name="editStockBalance"  (input)="setEditSales()"  [(ngModel)]="editStockBalance"></td>
+                        <td><input type="number" placeholder="Monthly sales" name="editMonthlySales"  [(ngModel)]="editMonthlySales" disabled="true"></td>
                         <td class="action">
                             <i class="fa-regular fa-plus" (click)="editProduct()" style="color: var(--voilet);"></i>
                             

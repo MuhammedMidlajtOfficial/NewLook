@@ -31,5 +31,8 @@ isAdmin:boolean=false;
   updatePassword(user:any){
     return this.http.post('http://localhost:3000/user/editUser',user)
   }
+  verifyUserName(username:any){
+    return this.http.post('http://localhost:3000/user/isUserExists',{username:username})
+  }
 
 }

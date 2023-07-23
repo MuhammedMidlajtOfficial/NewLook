@@ -25,6 +25,11 @@ export class GodownComponent {
   stockBalance: any = null;
   personName: any = localStorage.getItem('username');
 
+  purchaseQuantityTotal: any = 0;
+  recievedQuantityTotal: any = 0;
+
+  QuantityTotal: any = 0;
+
   editProductId: any = null;
   editProductName: any = null;
   editPurchaseQuantity: any = null;
@@ -64,6 +69,14 @@ export class GodownComponent {
     this.api.getGodownProducts().subscribe((data: any) => {
       this.products = data.data;
       console.log(this.products);
+      this.products.forEach((product: any) => {
+       if(product.additionalNumber >  0){
+        this.purchaseQuantityTotal += product.additionalNumber;
+       }else{
+        this.recievedQuantityTotal += product.additionalNumber;
+       }
+      });
+      this.QuantityTotal = this.recievedQuantityTotal - this.purchaseQuantityTotal;
     });
   }
 
@@ -105,7 +118,8 @@ export class GodownComponent {
           recievedDate: this.editRecievedDate,
           price: this.editPurchaseAmount,
           stockBalance: this.editStockBalance,
-          additionalNumber:this.editRecievedQuantity - this.editPurchaseQuantity,
+          additionalNumber:
+            this.editRecievedQuantity - this.editPurchaseQuantity,
           personName: this.personName,
         },
       })
