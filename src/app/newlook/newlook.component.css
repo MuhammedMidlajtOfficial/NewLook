@@ -52,6 +52,7 @@
     font-size: 25px;
     margin-left: 30px;
     cursor: pointer;
+    color: var(--voilet);
 }
 /* search */
 
