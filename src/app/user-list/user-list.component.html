@@ -8,8 +8,6 @@
                 <i class="fa-solid fa-caret-left backButton"></i>
               </div>
             <div class="left">
-                
-
                 <div class="log-in-box">
                     <div id="log-in-column">
                         <div class="hi">
@@ -43,7 +41,7 @@
             <div class="userlist-in-box">
                 <div class="user-list-column">
                     <div class="user-column" *ngFor="let user of users" >
-                            <span class="user-list-user-name">{{user.username}}</span>
+                            <span class="user-list-user-name" [ngClass]="[isAdmincheck(user.username) ? 'admin-color':'user-color']">{{user.username}}</span>
                             <span class="user-list-delete" (click)="deleteUser(user.id)" >
                                 <i class="fa-solid fa-trash" style="color: #fff;"></i>
                             </span>

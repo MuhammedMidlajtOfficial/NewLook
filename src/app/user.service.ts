@@ -16,7 +16,7 @@ isAdmin:boolean=false;
     }
   }
 
-  login(user:any){
+    login(user:any){
     return this.http.post("http://localhost:3000/user/login",user)
   }
   getAllUsers(){

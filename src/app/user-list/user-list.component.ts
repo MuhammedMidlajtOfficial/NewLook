@@ -37,10 +37,6 @@ export class UserListComponent {
       alert("Username already exists");
       return;
     }
-    if(!isAlready){
-      alert("User Added Successfully");
-      return;
-    }
     const user={
       username:this.username,
       password:this.password,
@@ -60,5 +56,9 @@ export class UserListComponent {
   toggleVisiblity(){
     const password:any=document.getElementById("password");
     password.type==="password" ? password.type="text" : password.type="password";
+  }
+
+  isAdmincheck(username:any){
+    return username.split(" ")[0]=="admin" ? true : false;
   }
 }
