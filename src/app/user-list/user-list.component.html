@@ -40,8 +40,8 @@
         <div class="right">
             <div class="userlist-in-box">
                 <div class="user-list-column">
-                    <div class="user-column" *ngFor="let user of users" >
-                            <span class="user-list-user-name" [ngClass]="[isAdmincheck(user.username) ? 'admin-color':'user-color']">{{user.username}}</span>
+                    <div class="user-column" *ngFor="let user of users" [ngClass]="[isAdmincheck(user.username) ? 'admin-color':'user-color']">
+                            <span class="user-list-user-name" >{{user.username}}</span>
                             <span class="user-list-delete" (click)="deleteUser(user.id)" >
                                 <i class="fa-solid fa-trash" style="color: #fff;"></i>
                             </span>
